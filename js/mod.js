@@ -1,9 +1,9 @@
 let modInfo = {
-	name: "The ??? Tree",
-	id: "mymod",
-	author: "nobody",
-	pointsName: "points",
-	discordName: "",
+	name: "The Character Sheet",
+	id: "char1",
+	author: "ekarat",
+	pointsName: "experience",
+	discordName: "Marcus Hanford#3214",
 	discordLink: "",
 	changelogLink: "https://github.com/Acamaeda/The-Modding-Tree/blob/master/changelog.md",
 	initialStartPoints: new Decimal (10), // Used for hard resets and new players
@@ -36,6 +36,7 @@ function getPointGen() {
 		return new Decimal(0)
 
 	let gain = new Decimal(1)
+	if (hasUpgrade("sk",11)) gain = gain.times(player.sk.buyables[11])
 	return gain
 }
 
