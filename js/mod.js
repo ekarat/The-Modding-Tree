@@ -36,7 +36,7 @@ function getPointGen() {
 		return new Decimal(0)
 
 	let gain = new Decimal(1)
-	if (hasUpgrade("sk",11)) gain = gain.times(player.sk.buyables[11])
+	if (hasUpgrade("sk",11)) gain = gain.times(player.sk.buyables[11].max(1))
 	return gain
 }
 
